@@ -1,12 +1,32 @@
-import React from 'react';
+/* @jsx freact */
+/* eslint-disable */
+import * as P from 'maasglobal-prelude-ts';
+import freact from './bob';
 import logo from './logo.svg';
 import './App.css';
+import Omg from './omg';
+import * as ruins from 'ruins-ts'
+
+function Kuva(): freact.JSX.Element {
+
+  return (
+  <div>
+    ennen
+    <img src={logo} className="App-logo" alt="logo" />
+    jalkeen
+  </div>
+    
+    )
+
+}
 
 function App() {
-  return (
+  const io = (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Kuva />
+        <p>start</p>
+        <Omg />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -21,6 +41,8 @@ function App() {
       </header>
     </div>
   );
+  return ruins.fromIO(io)
+  return ruins.fromIO(<div>{() => 'lol'}</div>)
 }
 
 export default App;
